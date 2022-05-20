@@ -1,9 +1,8 @@
-
-span{
-    margin-left: 10px;
+span {
+  margin-left: 10px;
 }
 
-.symbol{
-    text-transform: uppercase;
-    color: grey;
+.symbol {
+  text-transform: uppercase;
+  color: grey;
 }
