@@ -2,7 +2,7 @@ import React from "react";
 import './CoinRow.css'
 
 function coinRow({ coin, index }) {
-  console.log(coin, index);
+  // console.log(coin, index);
   return (
     <tr key={coin.id}>
       <td>{index}</td>
