@@ -1,7 +1,33 @@
 import React from "react";
-import { LineChart, XAxis, Tooltip, CartesianGrid, Line, YAxis, Legend } from 'recharts'
+import { LineChart, XAxis, CartesianGrid, Line, YAxis } from 'recharts';
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
-const CoinChart = ({historicData}) => {
+
+const CoinChart = ({ coin }) => {
+    let { coinName } = useParams();
+
+    // const [historicData, setHistoricData] = useState([]);
+
+    // const getHistoricChart = async () => {
+    //   const res = await axios.get(
+    //     `https://api.coingecko.com/api/v3/coins/${coin.name.toLowerCase()}/market_chart?vs_currency=${coin.name.toLowerCase()}&days=${365}`
+    //   );
+
+    //   // const res = await axios.get(
+    //   //   `https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=btc&days=365`
+    //   // );
+
+    //   setHistoricData(res.data.prices);
+    // };
+
+    // useEffect(() => {
+    //   getHistoricChart();
+    // }, []);
+  
+  
+  // console.log('hd', historicData)
 
     const data = [
       {
@@ -50,12 +76,14 @@ const CoinChart = ({historicData}) => {
 
 
   return (
-    <div>
-      aaaaaaaaaaaaaaaaa
+ 
+    <div className="d-flex justify-content-around">
+      <h1>{coinName}</h1>
       <LineChart
-        width={700}
-        height={700}
+        width={900}
+        height={500}
         data={data}
+        // data={historicData.map((hd, index) => hd[index])}
         margin={{
           top: 5,
           right: 30,
@@ -63,14 +91,15 @@ const CoinChart = ({historicData}) => {
           bottom: 5,
         }}
       >
-        <CartesianGrid strokeDasharray="3 3" />
+        <CartesianGrid strokeDasharray="1 1" />
         <XAxis dataKey="name" />
         <YAxis dataKey="" />
-        <Tooltip />
-        <Legend />
+        {/* <XAxis dataKey={historicData[0]} />
+        <YAxis dataKey="" /> */}
         <Line
           type="monotone"
           dataKey="pv"
+          // dataKey={historicData[1]}
           stroke="#8884d8"
           //   activeDot={{ r: 8 }}
         />
