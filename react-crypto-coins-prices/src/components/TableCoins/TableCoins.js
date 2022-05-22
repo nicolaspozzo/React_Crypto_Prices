@@ -1,8 +1,10 @@
 import React from "react";
 import "./TableCoins.css";
-import CoinRow from "../CoinRow/coinRow";
+import CoinRow from "../CoinRow/CoinRow";
 
-const titles = ["#", "Coin", "Price", "Price Change", "24 Volume"];
+
+const titles = ["#", "Coin", "Price", "Price Change", "24 Volume", "Chart"];
+
 
 const TableCoins = ({ coins, search }) => {
   const filteredCoins = coins.filter(
@@ -12,7 +14,7 @@ const TableCoins = ({ coins, search }) => {
   );
 
   return (
-    <table className="table table-dark mt-4 table-hover">
+    <table className="table table-hover table-dark">
       <thead>
         <tr>
           {titles.map((title, index) => (
@@ -22,7 +24,11 @@ const TableCoins = ({ coins, search }) => {
       </thead>
       <tbody>
         {filteredCoins.map((coin, index) => (
-          <CoinRow coin={coin} index={index + 1} key={index} />
+          <CoinRow
+            coin={coin}
+            index={index + 1}
+            key={index}
+          />
         ))}
       </tbody>
     </table>
