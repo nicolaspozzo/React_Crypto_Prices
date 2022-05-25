@@ -78,6 +78,7 @@ const CoinChart = ({ coin }) => {
   return (
  
     <div className="d-flex justify-content-around">
+      info
       <h1>{coinName}</h1>
       <LineChart
         width={900}
