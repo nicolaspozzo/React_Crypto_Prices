@@ -22,9 +22,10 @@ const CoinRow = ({ coin, index }) => {
       </td>
       <td>{coin.total_volume}</td>
       <td>
-        <button onClick={() => {navigate(`/coin-chart/${coin.name}`)}}>
-          Chart
-        </button>
+        {/* <button onClick={() => { navigate(`/coin-chart/${coin.name}`) }}>
+          Button
+        </button> */}
+          <i class="bi bi-graph-up" onClick={() => {navigate(`/coin-chart/${coin.name}`)}}></i>
       </td>
     </tr>
   );
